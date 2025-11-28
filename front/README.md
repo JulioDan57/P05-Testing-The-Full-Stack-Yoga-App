@@ -3,6 +3,8 @@
 is an interactive web page that helps users manage their yoga sessions.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
 
+![front-end-screenshot](src/assets/front-end-screenshot.png) 
+
 ## Start the project
 
 Git clone:
