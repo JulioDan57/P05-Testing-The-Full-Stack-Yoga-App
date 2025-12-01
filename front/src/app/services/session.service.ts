@@ -17,6 +17,7 @@ export class SessionService {
     if (stored) {
       this.sessionInformation = JSON.parse(stored);
       this.isLogged = true;
+      this.next(); // 👈 OBLIGATOIRE      
     }
   }
 
@@ -27,12 +28,14 @@ export class SessionService {
   public logIn(user: SessionInformation): void {
     this.sessionInformation = user;
     this.isLogged = true;
+    sessionStorage.setItem('sessionInformation', JSON.stringify(user));    
     this.next();
   }
 
   public logOut(): void {
     this.sessionInformation = undefined;
     this.isLogged = false;
+    sessionStorage.removeItem('sessionInformation');    
     this.next();
   }
 

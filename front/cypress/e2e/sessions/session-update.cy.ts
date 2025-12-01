@@ -80,4 +80,12 @@ describe('Session update (Mocked)', () => {
     });
   });
 
+  it('should disable update when fields are empty', () => {
+    cy.wait('@mockSession');
+    cy.wait('@mockTeachers');
+
+    cy.get('input[formControlName=name]').clear();
+    cy.get('button[type=submit]').should('be.disabled');
+  });
+
 });
